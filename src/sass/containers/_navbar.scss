@@ -1,0 +1,23 @@
+.navbar {
+
+  &__navbar {
+    box-sizing: border-box;
+    margin-right: auto;
+
+    margin-bottom: 20px;
+  }
+
+  &__navitem {
+    padding: 2px;
+    margin-right: 10px;
+  }
+
+  &__navitemlink {
+    color: white;
+    text-decoration: none;
+  }
+
+  .active {
+    border-bottom: 3px solid white;
+  }
+}
