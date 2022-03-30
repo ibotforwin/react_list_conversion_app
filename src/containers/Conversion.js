@@ -25,9 +25,14 @@ const Conversion = () => {
         <h1 className='conversion__heading'>
             Hello
         </h1>
-        <Button style={styles} variant="secondary" onClick={handleClick}>Generate Random Number</Button>{' '}
-        <Button ariant="primary" onClick={hideButton}>Toggle Button</Button>{' '}
-        <p>{currentNumber}</p>
+        <div className="converstion_body">
+            <Button style={styles} variant="secondary" onClick={handleClick}>Generate Random Number</Button>{' '}
+            <Button ariant="primary" onClick={hideButton}>Toggle Button</Button>{' '}
+            
+        </div>
+        <div className="conversion_number">
+            <p>{currentNumber}</p>  
+        </div>
     </div>
     );
     }
