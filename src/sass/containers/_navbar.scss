@@ -3,20 +3,21 @@
   &__navbar {
     box-sizing: border-box;
     margin-right: auto;
+
     margin-bottom: 20px;
   }
 
   &__navitem {
-    padding: 2px;
+    padding: 3px;
     margin-right: 10px;
+  }
+
+  &__navitemlink {
     color: white;
     text-decoration: none;
   }
 
-
-  .active, .btn:hover {
+  .active {
     border-bottom: 3px solid white;
   }
-
-
 }
