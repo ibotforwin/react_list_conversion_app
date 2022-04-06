@@ -19,6 +19,9 @@ const NavBar = () => {
                     <NavLink exact className='navbar__navitem' to='notfound'>
                         NotFound
                     </NavLink>
+                    <NavLink exact className='navbar__navitem' to='testpage'>
+                        Test
+                    </NavLink>
                 </Nav>
 
             </Navbar.Collapse>
