@@ -1,0 +1,15 @@
+.individual-profile {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(88, 157, 213);
+    font-weight: 600;
+    justify-content: center;
+    padding: 2%;
+    border-radius: 5%;
+}
+
+.user-image {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 15%;
+}
