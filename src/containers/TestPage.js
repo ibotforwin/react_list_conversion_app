@@ -1,64 +1,49 @@
-import React from "react"
-import UserProfile from "./UserProfile"
+import React, {useEffect, useState} from "react"
+import UserProfile from "../components/TestPage/UserProfile"
+import getUser from "../services/user/getUser";
 
 export default function TestPage(){
 
-    const [data, setData] = React.useState(null)
-    const [loading, setLoading] = React.useState(true)
-    const [error, setError] = React.useState(null)
-    const [usersElement, setUsersElement] = React.useState(null)
-   
+    const [error, setError] = useState('')
+    const [userElements, setUserElements] = useState([])
 
-    React.useEffect(()=> {
-        fetch("https://randomuser.me/api/?results=5")
-            .then(response => {
-                if (response.ok) {
-                    return response.json()
-                }
-                throw response
-            })
-            .then(data=> {
-                setData(data)
-            })
-            .catch(error => {
-                console.error("Error fetching data: ", error)
-                setError(error)
-            })
-            .finally(()=> {
-                setLoading(false)
-            })
-    }, [])
+    const handleClick = async() => {
+        //handleClick is an asynchronous function (the async before the ()).
+        //This allows us to use the "await" keyword.
 
-    if (loading) return "Loading"
-    if (error) return "Error!!"
+        //To cause an error message, change the 5 below to a 4
+        //The "await" keyword ensures that the application waits for the "users" variable to be filled before doing more
+        //stuff to it. Without the "await", the program would try to use "users" before getUser() is done running.
+        const users = await getUser(5)
 
-    const usersArray = data.results
-    //console.log(usersArray)
+        //For the sake of the example, we made the error condition that there should be 5 or more users.
+        if(users.length>=5){
 
-
-
-    function handleClick(){
-        setUsersElement(usersArray.map(user => {
-            return <UserProfile
-            key={user.cell}
-            image={user.picture.large} 
-            firstName={user.name.first} 
-            lastName={user.name.last}
-            email={user.email}
-            city={user.location.city}
-            />
-        })
-        )
-        document.querySelector(".display-button").style.display = "none"
+            //We map through the results and build the user elements right inside the setUserElements(...)
+            setUserElements(users.map((user) => (
+                <UserProfile
+                    key={user.cell}
+                    image={user.picture.large}
+                    firstName={user.name.first}
+                    lastName={user.name.last}
+                    email={user.email}
+                    city={user.location.city}
+                />
+            )))
+        }else{
+            //If our condition fails, we fill out the error message.
+            setError('We had an issue with getting the data.')
+        }
 
     }
 
 
     return(
     <div className='testpage'>
-        <div onClick={handleClick} className="display-button">Get</div>
+        <div onClick={handleClick} className="display-button btn-lg shadow-sm">Get</div>
         <div className="users-display">
-            {usersElement}
+            {error}
+            {userElements}
         </div>
     </div>
     )
