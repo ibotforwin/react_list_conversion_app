@@ -1,8 +1,9 @@
 .users-display{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 5%;
+    padding: 1em;
+    display: grid;
+    grid-template-columns:repeat(auto-fit, 20rem);
+    justify-content: center;
+    gap: 1em;
 }
 
 .display-button {
