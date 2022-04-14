@@ -6,6 +6,7 @@ export default function TestPage(){
 
     const [error, setError] = useState('')
     const [userElements, setUserElements] = useState([])
+    const [profileNumber, setProfileNumber] = useState (null)
 
     const handleClick = async() => {
         //handleClick is an asynchronous function (the async before the ()).
@@ -14,10 +15,10 @@ export default function TestPage(){
         //To cause an error message, change the 5 below to a 4
         //The "await" keyword ensures that the application waits for the "users" variable to be filled before doing more
         //stuff to it. Without the "await", the program would try to use "users" before getUser() is done running.
-        const users = await getUser(5)
+        const users = await getUser(profileNumber)
 
         //For the sake of the example, we made the error condition that there should be 5 or more users.
-        if(users.length>=5){
+        if(users.length<=10){
 
             //We map through the results and build the user elements right inside the setUserElements(...)
             setUserElements(users.map((user) => (
@@ -37,9 +38,21 @@ export default function TestPage(){
 
     }
 
+    function getNumber(input){
+        setProfileNumber(input.target.value)
+        console.log(profileNumber)
+    }
 
     return(
     <div className='testpage'>
+        <form>
+            <label> Number of Profiles 
+                <hr />
+                <input type="number" onChange={getNumber}/>
+                <hr />
+            </label>
+                
+        </form>
         <div onClick={handleClick} className="display-button btn-lg shadow-sm">Get</div>
         <div className="users-display">
             {error}
