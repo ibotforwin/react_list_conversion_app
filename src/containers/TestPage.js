@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react"
+import React, {useState} from "react"
 import UserProfile from "../components/TestPage/UserProfile"
 import getUser from "../services/user/getUser";
 

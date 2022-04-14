@@ -5,11 +5,14 @@ export default function UserProfile (props){
     return (
         <>
             <div className="individual-profile">
-                <img className="user-image" src={props.image} />
-                <p>First name is: {props.firstName}</p>   
-                <p>Last name is: {props.lastName}</p>
-                <p>Email is: {props.email}</p>
-                <p>From: {props.city}</p>
+                <div className="user-top">
+                    <img className="user-image" src={props.image} />
+                    <p className="user-name">{props.firstName} {props.lastName}</p>
+                </div>
+                <div className="user-bottom">
+                    <p className="user-email">{props.email}</p>
+                    <p className="user-location">{props.city}</p>
+                </div>                
             </div>       
         </>
 
