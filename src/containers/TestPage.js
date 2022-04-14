@@ -18,7 +18,7 @@ export default function TestPage(){
         const users = await getUser(profileNumber)
 
         //For the sake of the example, we made the error condition that there should be 5 or more users.
-        if(users.length<=10){
+        if(users.length<=100){
 
             //We map through the results and build the user elements right inside the setUserElements(...)
             setUserElements(users.map((user) => (
