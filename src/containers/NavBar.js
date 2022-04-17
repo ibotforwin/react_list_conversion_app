@@ -25,6 +25,9 @@ const NavBar = () => {
                     <NavLink exact className='navbar__navitem' to='userprofile'>
                         User Profile
                     </NavLink>
+                    <NavLink exact className='navbar__navitem' to='listings'>
+                        Listings
+                    </NavLink>
                 </Nav>
 
             </Navbar.Collapse>
