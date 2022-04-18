@@ -13,6 +13,7 @@ export default function TestPage(){
         //handleClick is an asynchronous function (the async before the ()).
         //This allows us to use the "await" keyword.
 
+
         //To cause an error message, change the 5 below to a 4
         //The "await" keyword ensures that the application waits for the "users" variable to be filled before doing more
         //stuff to it. Without the "await", the program would try to use "users" before getUser() is done running.
