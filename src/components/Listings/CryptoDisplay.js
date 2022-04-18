@@ -6,7 +6,7 @@ export default function CryptoDisplay (props){
         <>
             <div>
                 <h1>{props.nameInput.toUpperCase()} is worth {props.inputCrypto} Bitcoin </h1> 
-                             {/* feature-test2 */}
+                             {/* Feature-test2 */}
             </div>       
         </>
 
