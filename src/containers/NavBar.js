@@ -13,11 +13,20 @@ const NavBar = () => {
             <Navbar.Toggle aria-controls='basic-navbar-nav'/>
             <Navbar.Collapse id='basic-navbar-nav'>
                 <Nav>
-                    <NavLink exact className='navbar__navitem' activeClassName="navbar__active" to='/'>
+                    <NavLink exact className='navbar__navitem'  to='/'>
                         Home
                     </NavLink>
-                    <NavLink exact className='navbar__navitem' activeClassName="navbar__active" to='notfound'>
+                    <NavLink exact className='navbar__navitem' to='notfound'>
                         NotFound
+                    </NavLink>
+                    <NavLink exact className='navbar__navitem' to='testpage'>
+                        Test
+                    </NavLink>
+                    <NavLink exact className='navbar__navitem' to='userprofile'>
+                        User Profile
+                    </NavLink>
+                    <NavLink exact className='navbar__navitem' to='listings'>
+                        Listings
                     </NavLink>
                 </Nav>
 

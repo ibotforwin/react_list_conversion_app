@@ -1,0 +1,41 @@
+.individual-profile {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(226, 226, 226);
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2%;
+    border: 1px solid rgb(170, 170, 170);
+}
+
+.user-top {
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:rgb(89, 161, 119);
+    margin-bottom: 5%;
+}
+
+.user-bottom {
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(246, 245, 245);
+    font-weight: 400;
+    padding: 10px;
+}
+
+.user-image {
+    width: 50%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    border-radius: 45%;
+    border: 3px solid rgb(243, 239, 239);
+}

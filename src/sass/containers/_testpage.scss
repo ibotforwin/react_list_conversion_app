@@ -1,0 +1,16 @@
+.users-display{
+    padding: 1em;
+    display: grid;
+    grid-template-columns:repeat(auto-fit, 20rem);
+    justify-content: center;
+    gap: 1em;
+}
+
+.display-button {
+    background-color: rgb(43, 162, 175);
+    text-align: center;
+    font-weight: 1000;
+    width: 10%;
+    border-radius: 5%;
+    cursor: pointer;
+}
